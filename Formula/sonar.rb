@@ -7,11 +7,11 @@ class Sonar < Formula
 
   if OS.mac?
     url "https://github.com/felicianotech/sonar/releases/download/v0.6.0/sonar-v0.6.0-macos-amd64.tar.gz"
-    sha256 "896751b15f4ec7b5ab12b371804c3b89f24ac95b6cebd2919bff7ef457b2cd26"
+    sha256 "441896db5a12c84c2a1dab9fc2ecd575d040fbf4665aa20dd179c48f2605108f"
   elsif OS.linux?
     if Hardware::CPU.intel?
       url "https://github.com/felicianotech/sonar/releases/download/v0.6.0/sonar-v0.6.0-linux-amd64.tar.gz"
-      sha256 "ba37768e6ace757985f395b00726d6edca6f693556d42b22ef906f371c964b52"
+      sha256 "018a891a250afc6675f54b1a36608c9685e55d6baf3bc4394b533d9933f1beeb"
     end
   end
 
