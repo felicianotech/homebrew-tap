@@ -2,16 +2,16 @@
 class Sonar < Formula
   desc "A Docker utility."
   homepage "https://github.com/felicianotech/sonar"
-  version "0.9.3"
+  version "0.10.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/felicianotech/sonar/releases/download/v0.9.3/sonar-v0.9.3-macos-amd64.tar.gz"
-    sha256 "0abd5791f58eac81f6be1df4db4e95b9d08205a047f4e550995ba0dcab874218"
+    url "https://github.com/felicianotech/sonar/releases/download/v0.10.0/sonar-v0.10.0-macos-amd64.tar.gz"
+    sha256 "ea05d22d09d0881f6822654a0cccefed52a856d964654b955db5f957ace5db85"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/felicianotech/sonar/releases/download/v0.9.3/sonar-v0.9.3-linux-amd64.tar.gz"
-      sha256 "3cc467b02d42409a2d20af60cf04745ca6f6689597a3ed2ae73f45cd1b5d0f31"
+      url "https://github.com/felicianotech/sonar/releases/download/v0.10.0/sonar-v0.10.0-linux-amd64.tar.gz"
+      sha256 "49d0303df349d69e2a51171d6cec59d58fb3ec85a5aa3398611e85e8681074a5"
     end
   end
 
