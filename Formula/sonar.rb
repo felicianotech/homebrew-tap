@@ -2,20 +2,20 @@
 class Sonar < Formula
   desc "A Docker utility."
   homepage "https://github.com/felicianotech/sonar"
-  version "0.13.0"
+  version "0.13.1"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/felicianotech/sonar/releases/download/v0.13.0/sonar-v0.13.0-macos-amd64.tar.gz"
-    sha256 "b9acfbfdd885d501e3ae0a5d8beb77d87e9214fd300ffd05650f5c38f6f9c9b9"
+    url "https://github.com/felicianotech/sonar/releases/download/v0.13.1/sonar-v0.13.1-macos-amd64.tar.gz"
+    sha256 "0f9fb5c444ab8143f89a93078b3be658cb09e94281d9ae321b2209c36a4555f0"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/felicianotech/sonar/releases/download/v0.13.0/sonar-v0.13.0-linux-amd64.tar.gz"
-    sha256 "a01a7e8fb4eb7cd928f61d1f93cf09f7595b4c0017366fcf633d517cfe62d82a"
+    url "https://github.com/felicianotech/sonar/releases/download/v0.13.1/sonar-v0.13.1-linux-amd64.tar.gz"
+    sha256 "f1c627a3e9ad59b1b2bbde9851e8cbe2b1dfd339e7fd02fe2a73667f70511bca"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/felicianotech/sonar/releases/download/v0.13.0/sonar-v0.13.0-linux-arm64.tar.gz"
-    sha256 "1c9e31edd5e79732bfca694c34dbb8d6db29173f16151a310334824c32745adf"
+    url "https://github.com/felicianotech/sonar/releases/download/v0.13.1/sonar-v0.13.1-linux-arm64.tar.gz"
+    sha256 "a4890a55f67bf29583971a71906df9365a3763143ce0af91c4b54e04ca26a5cf"
   end
 
   def install
