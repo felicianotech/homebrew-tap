@@ -5,24 +5,29 @@
 class Valerie < Formula
   desc "An HTML schema validator."
   homepage "https://github.com/felicianotech/valerie"
-  version "0.1.0"
+  version "0.2.0"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/felicianotech/valerie/releases/download/v0.1.0/valerie-v0.1.0-macos-amd64.tar.gz"
-    sha256 "8c8df87fb79beb06b83f9109d2a0dda20446089d0f5c3b907d2e36963b171af1"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/felicianotech/valerie/releases/download/v0.2.0/valerie-v0.2.0-macos-amd64.tar.gz"
+      sha256 "47a0679ffbfb46ddaca102551922f3ad613691e24f332799ad2609c7b27e35c6"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/felicianotech/valerie/releases/download/v0.2.0/valerie-v0.2.0-macos-arm64.tar.gz"
+      sha256 "525a97d3a56b9ad650a3ada0edbdd7a8752d291005200729b3484a28f8c42572"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/felicianotech/valerie/releases/download/v0.1.0/valerie-v0.1.0-macos-arm64.tar.gz"
-    sha256 "72d3ff857b45f94b39961b4157dba4687888aaf58503b0944a78ba138125096c"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/felicianotech/valerie/releases/download/v0.1.0/valerie-v0.1.0-linux-amd64.tar.gz"
-    sha256 "97157b049b919b4acc9c5f3b58e4df49675f27f2ac9c29e6168bbbeb570bbc1d"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/felicianotech/valerie/releases/download/v0.1.0/valerie-v0.1.0-linux-arm64.tar.gz"
-    sha256 "26e9686e98fbe718397544c41351bcb779246012fc2c5d38991adc20cad24ac9"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/felicianotech/valerie/releases/download/v0.2.0/valerie-v0.2.0-linux-amd64.tar.gz"
+      sha256 "87a198d6e320e9520a673a18c3e817851d3407d4990c1fe2454fcdbef1358e0f"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/felicianotech/valerie/releases/download/v0.2.0/valerie-v0.2.0-linux-arm64.tar.gz"
+      sha256 "ef00537e9e754085bd21bdaabb6dc768285fe839cf8282445510f33e69917eec"
+    end
   end
 
   def install
