@@ -5,28 +5,28 @@
 class Sonar < Formula
   desc "A Docker utility."
   homepage "https://github.com/felicianotech/sonar"
-  version "0.14.0"
+  version "0.14.1"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/felicianotech/sonar/releases/download/v0.14.0/sonar-v0.14.0-macos-amd64.tar.gz"
-      sha256 "6ac50a067005819bf59ca829c40adf301bcfa0752453dd92467ca85cab918837"
+      url "https://github.com/felicianotech/sonar/releases/download/v0.14.1/sonar-v0.14.1-macos-amd64.tar.gz"
+      sha256 "731d01d74b814113c5a7cc1e5037d8e6aa57019f93786bcf68ccfc9a24b97f42"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/felicianotech/sonar/releases/download/v0.14.0/sonar-v0.14.0-macos-arm64.tar.gz"
-      sha256 "4585657220eb44064f47d83574bde1ed43a31148f1888e06e89539cbfb105d3f"
+      url "https://github.com/felicianotech/sonar/releases/download/v0.14.1/sonar-v0.14.1-macos-arm64.tar.gz"
+      sha256 "5a79724fc73f6479c550ed24466c890e5c283220c74834592d70d149a45009b8"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/felicianotech/sonar/releases/download/v0.14.0/sonar-v0.14.0-linux-amd64.tar.gz"
-      sha256 "78ff783d4cc66481822589ae0f9181912bfaa59c620fbd370093930c9aa063dc"
+      url "https://github.com/felicianotech/sonar/releases/download/v0.14.1/sonar-v0.14.1-linux-amd64.tar.gz"
+      sha256 "339c1642a77bed015ff9f68cdc61ead0ce6ed9c5ad9adc58db5547e4dbb124e3"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/felicianotech/sonar/releases/download/v0.14.0/sonar-v0.14.0-linux-arm64.tar.gz"
-      sha256 "b47d30098d228ec8859c73a6ee4708d6b4c89779578fc3219c31a3bf6077fa08"
+      url "https://github.com/felicianotech/sonar/releases/download/v0.14.1/sonar-v0.14.1-linux-arm64.tar.gz"
+      sha256 "f90535b95b1669fe1efafa00901ac65984409c7ab687a22533f214982ce27353"
     end
   end
 
