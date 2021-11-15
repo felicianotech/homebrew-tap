@@ -5,33 +5,44 @@
 class Sonar < Formula
   desc "A Docker utility."
   homepage "https://github.com/felicianotech/sonar"
-  version "0.14.1"
-  bottle :unneeded
+  version "0.15.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/felicianotech/sonar/releases/download/v0.14.1/sonar-v0.14.1-macos-amd64.tar.gz"
-      sha256 "731d01d74b814113c5a7cc1e5037d8e6aa57019f93786bcf68ccfc9a24b97f42"
+      url "https://github.com/felicianotech/sonar/releases/download/v0.15.0/sonar-v0.15.0-macos-amd64.tar.gz"
+      sha256 "403535ab46292f686b13f104f1c44a329656eb37c1e13b35eeb46e17f1a33ce5"
+
+      def install
+        bin.install "sonar"
+      end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/felicianotech/sonar/releases/download/v0.14.1/sonar-v0.14.1-macos-arm64.tar.gz"
-      sha256 "5a79724fc73f6479c550ed24466c890e5c283220c74834592d70d149a45009b8"
+      url "https://github.com/felicianotech/sonar/releases/download/v0.15.0/sonar-v0.15.0-macos-arm64.tar.gz"
+      sha256 "d4bca771c2fa5b6d6f0380905b6e6e5c472073e7f303477c83b5a7a760c05006"
+
+      def install
+        bin.install "sonar"
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/felicianotech/sonar/releases/download/v0.14.1/sonar-v0.14.1-linux-amd64.tar.gz"
-      sha256 "339c1642a77bed015ff9f68cdc61ead0ce6ed9c5ad9adc58db5547e4dbb124e3"
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/felicianotech/sonar/releases/download/v0.14.1/sonar-v0.14.1-linux-arm64.tar.gz"
-      sha256 "f90535b95b1669fe1efafa00901ac65984409c7ab687a22533f214982ce27353"
-    end
-  end
+      url "https://github.com/felicianotech/sonar/releases/download/v0.15.0/sonar-v0.15.0-linux-arm64.tar.gz"
+      sha256 "32a91b24c75ed0e0f62f7f178446d39ae2a360038706cb868bb9ce09c477e970"
 
-  def install
-    bin.install "sonar"
+      def install
+        bin.install "sonar"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/felicianotech/sonar/releases/download/v0.15.0/sonar-v0.15.0-linux-amd64.tar.gz"
+      sha256 "cc3ac4c3de43c7ed29fc9a3e27714fdd556622aa2162050a89467c21c90279d0"
+
+      def install
+        bin.install "sonar"
+      end
+    end
   end
 
   test do
