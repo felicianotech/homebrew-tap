@@ -5,20 +5,20 @@
 class Sonar < Formula
   desc "A Docker utility."
   homepage "https://github.com/felicianotech/sonar"
-  version "0.15.0"
+  version "0.16.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/felicianotech/sonar/releases/download/v0.15.0/sonar-v0.15.0-macos-amd64.tar.gz"
-      sha256 "403535ab46292f686b13f104f1c44a329656eb37c1e13b35eeb46e17f1a33ce5"
+    if Hardware::CPU.arm?
+      url "https://github.com/felicianotech/sonar/releases/download/v0.16.0/sonar-v0.16.0-macos-arm64.tar.gz"
+      sha256 "76c04e5cd6446aae0e17b2d39285444478ebf9b0262989802d0bae6cd8a30623"
 
       def install
         bin.install "sonar"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/felicianotech/sonar/releases/download/v0.15.0/sonar-v0.15.0-macos-arm64.tar.gz"
-      sha256 "d4bca771c2fa5b6d6f0380905b6e6e5c472073e7f303477c83b5a7a760c05006"
+    if Hardware::CPU.intel?
+      url "https://github.com/felicianotech/sonar/releases/download/v0.16.0/sonar-v0.16.0-macos-amd64.tar.gz"
+      sha256 "2aa0feb8c1bb0b1499ffc4c6d0dd746b9a97358f9d01cba10f6ee524b2d0fa3c"
 
       def install
         bin.install "sonar"
@@ -28,16 +28,16 @@ class Sonar < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/felicianotech/sonar/releases/download/v0.15.0/sonar-v0.15.0-linux-arm64.tar.gz"
-      sha256 "32a91b24c75ed0e0f62f7f178446d39ae2a360038706cb868bb9ce09c477e970"
+      url "https://github.com/felicianotech/sonar/releases/download/v0.16.0/sonar-v0.16.0-linux-arm64.tar.gz"
+      sha256 "a6dec03e69a4bb51c74f0d6196cff22fa803f053e57c2b6b711966b96609f729"
 
       def install
         bin.install "sonar"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/felicianotech/sonar/releases/download/v0.15.0/sonar-v0.15.0-linux-amd64.tar.gz"
-      sha256 "cc3ac4c3de43c7ed29fc9a3e27714fdd556622aa2162050a89467c21c90279d0"
+      url "https://github.com/felicianotech/sonar/releases/download/v0.16.0/sonar-v0.16.0-linux-amd64.tar.gz"
+      sha256 "34d49e7a3775b9bd8184a8506009a50471933cb0570ec41f7d6ce560d206fa28"
 
       def install
         bin.install "sonar"
