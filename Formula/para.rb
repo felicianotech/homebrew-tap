@@ -5,25 +5,44 @@
 class Para < Formula
   desc "A useful tool for software package manager analytics."
   homepage "https://github.com/felicianotech/para"
-  version "0.5.0"
-  bottle :unneeded
+  version "0.6.0"
 
   on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/felicianotech/para/releases/download/v0.6.0/para-v0.6.0-macos-arm64.tar.gz"
+      sha256 "1ec59b6d8714f04ecb110fd814d0fcdbf8047b6b0b91a939a8da8ba1e0b95c00"
+
+      def install
+        bin.install "para"
+      end
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/felicianotech/para/releases/download/v0.5.0/para-v0.5.0-macos-amd64.tar.gz"
-      sha256 "fb6d68c5a6c0e162ef7ce27201074102b19840329d076565ce2ce398c5c71967"
+      url "https://github.com/felicianotech/para/releases/download/v0.6.0/para-v0.6.0-macos-amd64.tar.gz"
+      sha256 "672d092e4d92f1667dcf227ccee20fcdcdec11b45ae890630fcfd69c63118ccb"
+
+      def install
+        bin.install "para"
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/felicianotech/para/releases/download/v0.5.0/para-v0.5.0-linux-amd64.tar.gz"
-      sha256 "f152fdc4c7538c8c19b987e4494dc4a8084dbf74c55120d8f1201548c3eb384f"
-    end
-  end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/felicianotech/para/releases/download/v0.6.0/para-v0.6.0-linux-arm64.tar.gz"
+      sha256 "83aa44075e32a47c0acf9e7f6b44b64136dcc8821f3359812b8d7645f1fd5214"
 
-  def install
-    bin.install "para"
+      def install
+        bin.install "para"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/felicianotech/para/releases/download/v0.6.0/para-v0.6.0-linux-amd64.tar.gz"
+      sha256 "7062107f0c8b043b92ea54a36bd929c48f49f0f6ce921016e1f37a5fec7a8650"
+
+      def install
+        bin.install "para"
+      end
+    end
   end
 
   test do
