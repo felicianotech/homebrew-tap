@@ -5,33 +5,44 @@
 class Valerie < Formula
   desc "An HTML schema validator."
   homepage "https://github.com/felicianotech/valerie"
-  version "0.2.0"
-  bottle :unneeded
+  version "0.3.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/felicianotech/valerie/releases/download/v0.2.0/valerie-v0.2.0-macos-amd64.tar.gz"
-      sha256 "47a0679ffbfb46ddaca102551922f3ad613691e24f332799ad2609c7b27e35c6"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/felicianotech/valerie/releases/download/v0.2.0/valerie-v0.2.0-macos-arm64.tar.gz"
-      sha256 "525a97d3a56b9ad650a3ada0edbdd7a8752d291005200729b3484a28f8c42572"
+      url "https://github.com/felicianotech/valerie/releases/download/v0.3.0/valerie-v0.3.0-macos-arm64.tar.gz"
+      sha256 "8640e13754b60c67ba256a5448b60c131833a361499d0aaefe82847927007fd2"
+
+      def install
+        bin.install "valerie"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/felicianotech/valerie/releases/download/v0.3.0/valerie-v0.3.0-macos-amd64.tar.gz"
+      sha256 "180a543716169be81db0f5a6833a209f10d9c593ea00373d604bc77e350e865a"
+
+      def install
+        bin.install "valerie"
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/felicianotech/valerie/releases/download/v0.2.0/valerie-v0.2.0-linux-amd64.tar.gz"
-      sha256 "87a198d6e320e9520a673a18c3e817851d3407d4990c1fe2454fcdbef1358e0f"
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/felicianotech/valerie/releases/download/v0.2.0/valerie-v0.2.0-linux-arm64.tar.gz"
-      sha256 "ef00537e9e754085bd21bdaabb6dc768285fe839cf8282445510f33e69917eec"
-    end
-  end
+      url "https://github.com/felicianotech/valerie/releases/download/v0.3.0/valerie-v0.3.0-linux-arm64.tar.gz"
+      sha256 "7b25799f9b901fdb5af8374233cfca32172ca02373a28b06e211fd29b08802b9"
 
-  def install
-    bin.install "valerie"
+      def install
+        bin.install "valerie"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/felicianotech/valerie/releases/download/v0.3.0/valerie-v0.3.0-linux-amd64.tar.gz"
+      sha256 "8b200a3c7c59e272bcad73a9ece1e02007204a0bf1a93db53a2eb125a25a51d4"
+
+      def install
+        bin.install "valerie"
+      end
+    end
   end
 
   test do
