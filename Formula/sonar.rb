@@ -5,20 +5,20 @@
 class Sonar < Formula
   desc "A Docker utility."
   homepage "https://github.com/felicianotech/sonar"
-  version "0.17.0"
+  version "0.18.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/felicianotech/sonar/releases/download/v0.17.0/sonar-v0.17.0-macos-arm64.tar.gz"
-      sha256 "13e81471a34061474d0a0e614bd3e5288a0ecd776cb42fd7b73d6fb3755e710e"
+      url "https://github.com/felicianotech/sonar/releases/download/v0.18.0/sonar-v0.18.0-macos-arm64.tar.gz"
+      sha256 "45094d7ded3f845f7e9789208fde37a14ff4254f4125ed10f58626a6e957b473"
 
       def install
         bin.install "sonar"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/felicianotech/sonar/releases/download/v0.17.0/sonar-v0.17.0-macos-amd64.tar.gz"
-      sha256 "965bf945664a4f544d00725f1ee3dfd3f77fa441a4e800550a4bae1055ffdfe3"
+      url "https://github.com/felicianotech/sonar/releases/download/v0.18.0/sonar-v0.18.0-macos-amd64.tar.gz"
+      sha256 "75ffbad926abab5505c2d9c065f7d684435f4e5a50aef7801a83668118d27fa8"
 
       def install
         bin.install "sonar"
@@ -28,16 +28,16 @@ class Sonar < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/felicianotech/sonar/releases/download/v0.17.0/sonar-v0.17.0-linux-arm64.tar.gz"
-      sha256 "b2f5a6b10187ef3ddbe9bb5e39d327f46949b3e17b9f360a861f49bb0aab9679"
+      url "https://github.com/felicianotech/sonar/releases/download/v0.18.0/sonar-v0.18.0-linux-arm64.tar.gz"
+      sha256 "a12833c3f36156631e5a070147e52a086b3ce3ad14a85e936bf99d34af1aad51"
 
       def install
         bin.install "sonar"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/felicianotech/sonar/releases/download/v0.17.0/sonar-v0.17.0-linux-amd64.tar.gz"
-      sha256 "79738d835c7bc1ffa41a8a40f6d90eaa8d73dafbbd238fcb36a7519c669ea595"
+      url "https://github.com/felicianotech/sonar/releases/download/v0.18.0/sonar-v0.18.0-linux-amd64.tar.gz"
+      sha256 "2eb6beba50e7599d947782b8c39b7c23c227dc2ca70ededbf2e5bdc228d3bbb9"
 
       def install
         bin.install "sonar"
