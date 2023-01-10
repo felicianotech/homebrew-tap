@@ -5,21 +5,21 @@
 class Warden < Formula
   desc "Audit your git repositories based on policy."
   homepage "https://RepoWarden.com"
-  version "0.1.0-alpha.1"
+  version "0.1.0-alpha.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/repowarden/cli/releases/download/v0.1.0-alpha.1/warden-v0.1.0-alpha.1-macos-arm64.tar.gz"
-      sha256 "74aaf3dc35a5475af62132380c2d4b76ef75944e0f3ca431836d98a824b5d302"
+      url "https://github.com/repowarden/cli/releases/download/v0.1.0-alpha.2/warden-v0.1.0-alpha.2-macos-arm64.tar.gz"
+      sha256 "ae0a0265c28273e3e3801e35c2e303b5835ef61cf6a74f4039dfff8730a76792"
 
       def install
         bin.install "warden"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/repowarden/cli/releases/download/v0.1.0-alpha.1/warden-v0.1.0-alpha.1-macos-amd64.tar.gz"
-      sha256 "746b27ac45bd37adcfa9d3847ac6f5957529414efefcb967b3de038ffe578608"
+      url "https://github.com/repowarden/cli/releases/download/v0.1.0-alpha.2/warden-v0.1.0-alpha.2-macos-amd64.tar.gz"
+      sha256 "f50df781c4d1f7fd248c31500c048513daa4a938757c3d4fd7f0ac0c3515b334"
 
       def install
         bin.install "warden"
@@ -29,16 +29,16 @@ class Warden < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/repowarden/cli/releases/download/v0.1.0-alpha.1/warden-v0.1.0-alpha.1-linux-arm64.tar.gz"
-      sha256 "92023a909ec02e16444bee67119326f779681735712f97d042665bf0692de7ad"
+      url "https://github.com/repowarden/cli/releases/download/v0.1.0-alpha.2/warden-v0.1.0-alpha.2-linux-arm64.tar.gz"
+      sha256 "c387a7dab762556665816a589e706c176439e8526ed4d298f5019857b0488183"
 
       def install
         bin.install "warden"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/repowarden/cli/releases/download/v0.1.0-alpha.1/warden-v0.1.0-alpha.1-linux-amd64.tar.gz"
-      sha256 "c9524eb7aac011e7cbe9bc1198dfd613fec4c522a0db1e852d7d19e9a15bd58f"
+      url "https://github.com/repowarden/cli/releases/download/v0.1.0-alpha.2/warden-v0.1.0-alpha.2-linux-amd64.tar.gz"
+      sha256 "8953630d5605b7c7db966eb75287f72863454cf5d5c04ff44dfe723fee84a3f0"
 
       def install
         bin.install "warden"
